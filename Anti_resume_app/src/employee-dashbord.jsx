@@ -3,15 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDZkjk8NTif1Q0ur6k2ErDIdHsxZd9ZAzA",
-    authDomain: "anti-resume-app.firebaseapp.com",
-    projectId: "anti-resume-app",
-    storageBucket: "anti-resume-app.firebasestorage.app",
-    messagingSenderId: "468312968259",
-    appId: "1:468312968259:web:3d75d45178aa6d276c98f6"
-  };
-const app = initializeApp(firebaseConfig);
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
+ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
