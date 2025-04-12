@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import CandidateDashboard from "./Pages/CandidateDashboard";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Dashboard";
@@ -17,6 +17,15 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+
+        <Route
+          path="/candidate-dashboard"
+          element={
+            <ProtectedRoute allowedRoles={["candidate"]}>
+              <CandidateDashboard />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/view-candidates/:skill"
