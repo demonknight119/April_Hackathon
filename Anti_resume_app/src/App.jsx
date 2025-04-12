@@ -19,9 +19,17 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
 
         <Route
+          path="/view-candidates/:skill"
+          element={
+            <ProtectedRoute allowedRoles={["company"]}>
+              <ViewCandidates />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["candidate", "company"]}>
               <Dashboard />
             </ProtectedRoute>
           }
@@ -29,24 +37,17 @@ function App() {
         <Route
           path="/challenge/:id"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["candidate"]}>
               <ChallengePage />
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/submit-success"
           element={
             <ProtectedRoute>
               <SubmitSuccess />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/view-candidates/:skill"
-          element={
-            <ProtectedRoute requiredRole="company">
-              <ViewCandidates />
             </ProtectedRoute>
           }
         />
