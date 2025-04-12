@@ -23,10 +23,10 @@ _Anti-Resume Platform_ is a skill-first recruitment system where hiring decision
 > Replace with your actual stack if different.
 
 - _Frontend_: HTML, CSS, JavaScript (or React)
-- _Backend_: Node.js, Express.js
-- _Database_: Firebase / MongoDB
-- _Authentication_: Firebase Auth / JWT
-- _Hosting_: Vercel / Netlify / Heroku
+- _Backend_: NA
+- _Database_: Firebase 
+- _Authentication_: Firebase Auth
+- _Hosting_: https://deft-dieffenbachia-fdee24.netlify.app/
 
 ## How It Works
 
