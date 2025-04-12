@@ -17,36 +17,36 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 // Header Component
-const Header = () => (
-  <Box
-    bg="teal.500"
-    color="white"
-    py={4}
-    textAlign="center"
-    width="100%"
-    position="relative"
-    zIndex="1"
-  >
-    <Heading size="lg">Anti-Resume Platform</Heading>
-  </Box>
-);
+// const Header = () => (
+//   <Box
+//     bg="teal.500"
+//     color="white"
+//     py={4}
+//     textAlign="center"
+//     width="100%"
+//     position="relative"
+//     zIndex="1"
+//   >
+//     <Heading size="lg">Anti-Resume Platform</Heading>
+//   </Box>
+// );
 
-// Footer Component
-const Footer = () => (
-  <Box
-    bg="teal.500"
-    color="white"
-    py={4}
-    textAlign="center"
-    width="100%"
-    position="relative"
-    zIndex="1"
-    mt="auto"
-  >
-    <Text>© 2025 Anti-Resume Platform</Text>
-    <Text>Follow us on social media</Text>
-  </Box>
-);
+// // Footer Component
+// const Footer = () => (
+//   <Box
+//     bg="teal.500"
+//     color="white"
+//     py={4}
+//     textAlign="center"
+//     width="100%"
+//     position="relative"
+//     zIndex="1"
+//     mt="auto"
+//   >
+//     <Text>© 2025 Anti-Resume Platform</Text>
+//     <Text>Follow us on social media</Text>
+//   </Box>
+// );
 
 function LoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -158,12 +158,12 @@ function LoginPage() {
         }}
       />
 
-      {/* Header */}
-      <Header />
+      {/* <Header /> */}
 
       {/* Main Content */}
       <Box
-        maxW="md"
+        maxW="500px"
+        width="100%"
         mx="auto"
         my="auto"
         p={8}
@@ -183,6 +183,7 @@ function LoginPage() {
             onChange={handleChange}
             value={formData.email}
             size="lg"
+            width="auto"
             bg="white"
           />
           <Input
@@ -192,6 +193,7 @@ function LoginPage() {
             onChange={handleChange}
             value={formData.password}
             size="lg"
+            width="auto"
             bg="white"
           />
           <Button colorScheme="teal" onClick={handleLogin} size="lg" mt={2}>
@@ -211,7 +213,7 @@ function LoginPage() {
       </Box>
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </Flex>
   );
 }
