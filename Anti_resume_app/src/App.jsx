@@ -8,7 +8,8 @@ import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import ChallengePage from "./pages/ChallengePage";
 import SubmitSuccess from "./pages/SubmitSuccess";
-import ViewCandidates from "./pages/ViewCandidates";
+
+import CompanyDashboard from "./Pages/CompanyDashboard";
 
 function App() {
   return (
@@ -17,6 +18,15 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+
+        <Route
+          path="/submit-success"
+          element={
+            <ProtectedRoute allowedRoles={["candidate"]}>
+              <SubmitSuccess />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/candidate-dashboard"
@@ -28,13 +38,14 @@ function App() {
         />
 
         <Route
-          path="/view-candidates/:skill"
+          path="/company-dashboard"
           element={
             <ProtectedRoute allowedRoles={["company"]}>
-              <ViewCandidates />
+              <CompanyDashboard />
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/dashboard"
           element={

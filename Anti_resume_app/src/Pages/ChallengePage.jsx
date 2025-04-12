@@ -1,6 +1,8 @@
 // src/pages/ChallengePage.jsx
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { getDoc } from "firebase/firestore";
+import { useEffect } from "react";
 import {
   Box,
   Button,
@@ -17,6 +19,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const ChallengePage = () => {
+  const [alreadySubmitted, setAlreadySubmitted] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const toast = useToast();
@@ -25,6 +28,38 @@ const ChallengePage = () => {
   const challenge = fakeChallenges.find((ch) => ch.id === id);
   const [answers, setAnswers] = useState({});
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const checkSubmission = async () => {
+      if (!user) return;
+      const submissionRef = doc(
+        db,
+        `users/${user.uid}/challengeSubmissions`,
+        id
+      );
+      const submissionSnap = await getDoc(submissionRef);
+      if (submissionSnap.exists()) {
+        setAlreadySubmitted(true);
+      }
+    };
+    checkSubmission();
+  }, [user, id]);
+
+  if (alreadySubmitted) {
+    return (
+      <Box textAlign="center" mt={10}>
+        <Heading size="md">You’ve already attempted this challenge!</Heading>
+        <Text>You cannot retake it.</Text>
+        <Button
+          mt={4}
+          colorScheme="teal"
+          onClick={() => navigate("/dashboard")}
+        >
+          Back to Dashboard
+        </Button>
+      </Box>
+    );
+  }
 
   const handleOptionChange = (qIndex, value) => {
     setAnswers((prev) => ({ ...prev, [qIndex]: value }));
