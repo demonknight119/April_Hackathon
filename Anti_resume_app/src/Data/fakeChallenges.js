@@ -271,6 +271,147 @@ const fakeChallenges = [
       },
     ],
   },
+  {
+    id: "node_express",
+    title: "Node & Express",
+    skill: "Node.js",
+    questions: [
+      {
+        id: 1,
+        question: "What does Express.js help with?",
+        options: [
+          "Handling server routing",
+          "Styling components",
+          "Running SQL queries",
+          "Managing state",
+        ],
+        correctAnswer: "Handling server routing",
+      },
+      {
+        id: 2,
+        question: "Which method handles GET requests in Express?",
+        options: ["app.get()", "app.post()", "app.route()", "app.fetch()"],
+        correctAnswer: "app.get()",
+      },
+      {
+        id: 3,
+        question: "Which middleware parses JSON requests?",
+        options: [
+          "express.json()",
+          "bodyParser()",
+          "app.use()",
+          "express.parse()",
+        ],
+        correctAnswer: "express.json()",
+      },
+      {
+        id: 4,
+        question: "What port does a typical Node server run on?",
+        options: ["3000", "5000", "8000", "All of the above"],
+        correctAnswer: "All of the above",
+      },
+      {
+        id: 5,
+        question: "How do you start a basic Express server?",
+        options: [
+          "node index.js",
+          "npm start",
+          "nodemon index.js",
+          "All of the above",
+        ],
+        correctAnswer: "All of the above",
+      },
+    ],
+  },
+  {
+    id: "html_css",
+    title: "HTML & CSS",
+    skill: "Frontend",
+    questions: [
+      {
+        id: 1,
+        question: "What tag is used to insert an image in HTML?",
+        options: ["<img>", "<image>", "<src>", "<pic>"],
+        correctAnswer: "<img>",
+      },
+      {
+        id: 2,
+        question: "What is the default display value of a <div>?",
+        options: ["block", "inline", "flex", "none"],
+        correctAnswer: "block",
+      },
+      {
+        id: 3,
+        question: "Which property changes the text color in CSS?",
+        options: ["color", "font-color", "text-color", "background-color"],
+        correctAnswer: "color",
+      },
+      {
+        id: 4,
+        question: "How do you select all <p> elements in CSS?",
+        options: ["p {}", "#p", ".p", "paragraph"],
+        correctAnswer: "p {}",
+      },
+      {
+        id: 5,
+        question: "What does the z-index property do?",
+        options: [
+          "Controls stacking order",
+          "Sets zoom level",
+          "Controls opacity",
+          "Resizes an element",
+        ],
+        correctAnswer: "Controls stacking order",
+      },
+    ],
+  },
+  {
+    id: "database_basics",
+    title: "Database Basics",
+    skill: "Databases",
+    questions: [
+      {
+        id: 1,
+        question: "What is a primary key?",
+        options: [
+          "A unique identifier for each row",
+          "A password",
+          "A column name",
+          "A database name",
+        ],
+        correctAnswer: "A unique identifier for each row",
+      },
+      {
+        id: 2,
+        question: "Which SQL statement is used to retrieve data?",
+        options: ["SELECT", "GET", "FETCH", "SHOW"],
+        correctAnswer: "SELECT",
+      },
+      {
+        id: 3,
+        question: "What does CRUD stand for?",
+        options: [
+          "Create Read Update Delete",
+          "Copy Read Upload Download",
+          "None",
+          "All",
+        ],
+        correctAnswer: "Create Read Update Delete",
+      },
+      {
+        id: 4,
+        question: "Which database is NoSQL?",
+        options: ["MongoDB", "MySQL", "PostgreSQL", "SQLite"],
+        correctAnswer: "MongoDB",
+      },
+      {
+        id: 5,
+        question: "What command inserts new data?",
+        options: ["INSERT INTO", "ADD", "APPEND", "PUSH"],
+        correctAnswer: "INSERT INTO",
+      },
+    ],
+  },
 ];
 
 export default fakeChallenges;
